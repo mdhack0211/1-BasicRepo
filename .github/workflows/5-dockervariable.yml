@@ -14,7 +14,7 @@ jobs:
 
             - run: echo docker login  --username=${{ vars.DOCKER_USERNAME }}  --password=${{ secrets.DOCKER_PASSWORD }}
 
-            - run: echo docker push  docker.io/mdhack0316/imagename
+            #- run: echo docker push  docker.io/mdhack0316/imagename
     
     deploy: 
         runs-on: ubuntu-latest
