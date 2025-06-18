@@ -24,7 +24,8 @@ jobs:
             group: mayank 
         steps: 
             - name: running containers
+              timeout-minutes: 1
               run: | 
                         echo docker run -itd -p 8080:80 $CONTAINER_REGISTRY/${{ vars.DOCKER_USERNAME }}/$IMAGE_NAME
-                        sleep 6000
+                        sleep 600
 
