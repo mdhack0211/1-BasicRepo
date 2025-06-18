@@ -1,0 +1,24 @@
+name: Multiple Jobs in A Single Workflow
+
+on: 
+    push: 
+
+jobs: 
+    build_job: 
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Installing Cowsay Program
+              run: sudo apt-get install cowsay -y 
+            - run: cowsay -f dragon "Run ,  dragon is there" >> dragon.txt
+
+    test_job: 
+        runs-on: ubuntu-latest
+        steps: 
+            - name: greping the word dragon 
+              run: grep -i dragon dragon.txt
+
+    deploy_job: 
+        runs-on: ubuntu-latest
+        steps: 
+            - run: cat dragon.txt
+            - run: echo "Successfully Run The Jobs"
