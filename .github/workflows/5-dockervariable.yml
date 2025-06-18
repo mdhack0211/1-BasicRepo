@@ -17,10 +17,14 @@ jobs:
             #- run: echo docker push  docker.io/mdhack0316/imagename
     
     deploy: 
+        needs: docker
         runs-on: ubuntu-latest
+        concurrency: 
+            cancel-in-progess: true
+            group: mayank 
         steps: 
             - name: running containers
               run: | 
                         echo docker run -itd -p 8080:80 $CONTAINER_REGISTRY/${{ vars.DOCKER_USERNAME }}/$IMAGE_NAME
-                        sleep 6000
+                        sleep 600
 
