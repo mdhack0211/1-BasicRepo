@@ -12,8 +12,6 @@ jobs:
                 CONTAINER_REGISTRY: docker.io
                 DOCKER_USERNAME: mdhack
                 IMAGE_NAME: github-actions-nginx
-
-            - name: Priting Docker build command
               run: echo  docker build -t ${{ env.CONTAINER_REGISTRY }}/$DOCKER_USERNAME/$IMAGE_NAME
 
             - run: echo docker login  --username=$DOCKER_USERNAME   --password=qwerty
