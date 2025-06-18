@@ -20,8 +20,8 @@ jobs:
         needs: docker
         runs-on: ubuntu-latest
         concurrency: 
-            cancel-in-progess: true
-            group: mayank 
+            cancel-in-progress: true
+            #group: mayank 
         steps: 
             - name: running containers
               run: | 
