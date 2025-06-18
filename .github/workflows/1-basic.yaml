@@ -11,6 +11,9 @@ jobs:
             - name: reading repo files using actions
               uses: actions/checkout@v4
             - name: listing files
-              run: ls
-            - name:  Read the file 
-              run: cat  index.html 
+              run:  | 
+                        echo "Welcome to Github Actions"
+                        ls -la
+                        cat index.html 
+            - name: ASCII Artwork
+              run: cowsay  -f  dragon   "Run for cover,   Dragon is there"
